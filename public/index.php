@@ -6,10 +6,12 @@
 	<body>
 		<div id="container">
 			<div id="logo">
-				<img src="/images/orchestra_logo_on_light.png">
+				<img src="/images/logo-engineyard.png">
 			</div>
 			<div id="content">
+				
 				<h2>Seriously, how easy was that?!</h2>
+
 				<p>This is just a simple bit of code, deployed from a <a href="https://github.com/orchestra-io/howto">repository on GitHub</a> and a <strong>master</strong> branch to show you how  you can be quickly up and running.</p>
 				<p>
 					You can delete this deployed app from your <a href="https://my.orchestra.io/apps">app dashboard</a> by clicking "Terminate".
