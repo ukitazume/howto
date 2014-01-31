@@ -42,6 +42,42 @@ $code = highlight_string('
 ?>',1);
 echo $code;
 ?>
+
+				<?php
+				// Attempt to connect to a preconfigured MySQL server.
+				if (getenv('DB_HOST')) {
+					// Make sure we have the necessary environment variables..
+					$db_vars = array('DB_HOST', 'DB_USER', 'DB_PASS', 'DB_DATABASE');
+					$db_vars_ok = true;
+					foreach ($db_vars as $db_var) {
+						if (!getenv($db_var)) {
+							$db_vars_ok = false;
+							break;
+						}
+					}
+
+					if ($db_vars_ok) {
+						echo "<h2>MySQL</h2>";
+						echo "<p>MySQL has been configured and the following environment variables contain the connection details:</p>";
+						echo "<ul>";
+						foreach ($db_vars as $db_var) {
+							echo "<li><code>$db_var=" . ($db_var == 'DB_PASS' ? '*********' : getenv($db_var)) . "</code></li>";
+						}
+						echo "</ul>";
+						$mysql = new mysqli(
+							getenv('DB_HOST'),
+							getenv('DB_USER'),
+							getenv('DB_PASS'),
+							getenv('DB_DATABASE')
+						);
+						if ($mysql->connect_errno) {
+							echo "<p>Error connecting to MySQL: " . $mysql->connect_error . "</p>";
+						} else {
+							echo "<p>A connection was successfully made to MySQL using the details above.</p>";
+						}
+					}
+				}
+				?>
 			<div>
 		</div>
 	</body>
