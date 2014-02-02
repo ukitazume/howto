@@ -11,19 +11,13 @@ body {
 	text-align:left;
 }
 
-#logo {
-	margin-left:-160px;
-	float: left;
-}
-
 #content {
-	padding-top: 39px;
+	padding-top: 20px;
 }
 
 img {
-	width:auto;
-	margin: 0 0 1em;
-	height: 140px;
+	width: 250px;
+	height: 54px;
 }
 code{
 	margin:0;

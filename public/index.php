@@ -6,7 +6,7 @@
 	<body>
 		<div id="container">
 			<div id="logo">
-				<img src="/images/logo-engineyard.png">
+				<img src="/images/ey-wordmark.png">
 			</div>
 			<div id="content">
 				
