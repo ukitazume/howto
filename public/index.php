@@ -56,7 +56,7 @@ echo $code;
 						}
 					}
 
-					if ($db_vars_ok) {
+					if (true) {
 						echo "<h2>MySQL</h2>";
 						echo "<p>MySQL has been configured and the following environment variables contain the connection details:</p>";
 						echo "<ul>";
@@ -65,10 +65,10 @@ echo $code;
 						}
 						echo "</ul>";
 						$mysql = new mysqli(
-							getenv('DB_HOST'),
-							getenv('DB_USER'),
-							getenv('DB_PASS'),
-							getenv('DB_DATABASE')
+              $_SERVER["DB_HOST"]
+              $_SERVER["DB_USER"]
+              $_SERVER["DB_PASS"]
+              $_SERVER["DB_NAME"]
 						);
 						if ($mysql->connect_errno) {
 							echo "<p>Error connecting to MySQL: " . $mysql->connect_error . "</p>";
