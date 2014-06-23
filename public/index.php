@@ -65,9 +65,9 @@ echo $code;
 						}
 						echo "</ul>";
 						$mysql = new mysqli(
-              $_SERVER["DB_HOST"]
-              $_SERVER["DB_USER"]
-              $_SERVER["DB_PASS"]
+              $_SERVER["DB_HOST"],
+              $_SERVER["DB_USER"],
+              $_SERVER["DB_PASS"],
               $_SERVER["DB_NAME"]
 						);
 						if ($mysql->connect_errno) {
